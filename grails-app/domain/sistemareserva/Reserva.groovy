@@ -1,7 +1,25 @@
 package sistemareserva
 
 class Reserva {
+  Date    fecha
+  Boolean semestral
+  String  horaEntregado
+  String  horaRetirado
+  String  observaciones
+  Boolean activa
+  Date    fechaCreacion
+  Date    fechaUltMod
+
+  static  belongsTo = []
 
     static constraints = {
+      fecha         (nullable:true)
+      semestral     (nullable:true)
+      horaEntregado (nullable:true)
+      horaRetirado  (nullable:true)
+      observaciones (nullable:true)
+      activa        (nullable:true)
+      fechaCreacion (nullable:true)
+      fechaUltMod   (nullable:true)
     }
 }
