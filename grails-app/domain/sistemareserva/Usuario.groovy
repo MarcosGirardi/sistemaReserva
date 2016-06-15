@@ -9,8 +9,8 @@ class Usuario {
   Date    fechaCreacion
   Date    fechaUltMod
 
-  static  belongsTo = [tipoUsuario: TipoUsuario, idUserCreador: Usuario]
-  static  hasMany = [usuarios: Usuario, tipos: TipoUsuario, resrvas: Reserva]
+  static  belongsTo = [tipoUsuario: TipoUsuario, creador: Usuario]
+  static  hasMany = [usuarios: Usuario, tipos: TipoUsuario, reservas: Reserva]
 
     static constraints = {
       dni           (nullable:true, unique:true)
@@ -21,6 +21,6 @@ class Usuario {
       fechaCreacion (nullable:true)
       fechaUltMod   (nullable:true)
       tipoUsuario   (nullable:true)
-      idUserCreador (nullable:true)
+      creador       (nullable:true)
     }
 }
