@@ -5,7 +5,7 @@ class Recurso {
   Boolean enServicio
 
   static  belongsTo = [tipoRecurso: TipoRecurso]
-  static  hasMany = [reservas: Reserva]
+  //static  hasMany = [reservas: Reserva]
 
     static constraints = {
       nombre      (nullable:true, unique:true)

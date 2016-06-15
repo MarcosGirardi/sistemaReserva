@@ -2,6 +2,14 @@ package sistemareserva
 
 class Reserva {
   Date    fecha
+
+  Recurso proyector
+  Recurso retro
+  Recurso pc
+  Recurso sonido
+  Recurso puntero
+  Recurso adaptador
+
   Boolean semestral
   String  horaEntregado
   String  horaRetirado
@@ -10,7 +18,8 @@ class Reserva {
   Date    fechaCreacion
   Date    fechaUltMod
 
-  static  belongsTo = []
+  static  belongsTo = [horaEntrega: Horario, horaRetiro: Horario, lugar: Lugar, carrera: Carrera, materia: Materia, docente: Usuario,
+                      adminCreador: Usuario]
 
     static constraints = {
       fecha         (nullable:true)
