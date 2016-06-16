@@ -4,6 +4,7 @@ import grails.transaction.Transactional
 
 @Transactional
 class InitService {
+  def encodingService
 
     def init() {
       log.println("iniciando...")
@@ -17,7 +18,7 @@ class InitService {
       if (!SUser.findAll()){
         log.println("no hay sudo")
         sudo.nombre = "sudo"
-        sudo.password = "admin"
+        sudo.password = encodingService.encode("admin")
         sudo.save(flush:true)
         log.println("se creo sudo")
 
@@ -30,7 +31,7 @@ class InitService {
 
         log.println("correcciones")
         sudo = SUser.findAll()
-        tU = TipoUsuario.findByTipo("super usuario")
+        tU = TipoUsuario.findByTipoIlike("su%")
         sudo[0].tipoUsuario = tU
         tU.creador = sudo[0]
         log.println("fin correcciones")
