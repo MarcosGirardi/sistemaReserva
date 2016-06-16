@@ -10,10 +10,6 @@ class InitService {
       log.println("iniciando...")
       def sudo = new SUser()
       def tSudo = new TipoUsuario()
-      def tC = TipoUsuario.createCriteria()
-      def tU = tC {
-        ilike("tipo", "su%")
-      }
 
       if (!SUser.findAll()){
         log.println("no hay sudo")
@@ -31,9 +27,9 @@ class InitService {
 
         log.println("correcciones")
         sudo = SUser.findAll()
-        tU = TipoUsuario.findByTipoIlike("su%")
-        sudo[0].tipoUsuario = tU
-        tU.creador = sudo[0]
+        tSudo = TipoUsuario.findByTipoIlike("su%")
+        sudo[0].tipoUsuario = tSudo
+        tSudo.creador = sudo[0]
         log.println("fin correcciones")
 
       }
