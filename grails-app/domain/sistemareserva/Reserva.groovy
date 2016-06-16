@@ -10,6 +10,12 @@ class Reserva {
   Recurso puntero
   Recurso adaptador
 
+  Horario horaEntrega
+  Horario horaRetiro
+
+  Usuario docente
+  Usuario adminCreador
+
   Boolean semestral
   String  horaEntregado
   String  horaRetirado
@@ -18,8 +24,7 @@ class Reserva {
   Date    fechaCreacion
   Date    fechaUltMod
 
-  static  belongsTo = [horaEntrega: Horario, horaRetiro: Horario, lugar: Lugar, carrera: Carrera, materia: Materia, docente: Usuario,
-                      adminCreador: Usuario]
+  static  belongsTo = [lugar: Lugar, carrera: Carrera, materia: Materia]
 
     static constraints = {
       fecha         (nullable:true)

@@ -5,7 +5,10 @@ class Recurso {
   Boolean enServicio
 
   static  belongsTo = [tipoRecurso: TipoRecurso]
-  //static  hasMany = [reservas: Reserva]
+  static  hasMany = [proyectores: Reserva, retros: Reserva, pcs: Reserva,
+                    sonidos: Reserva, punteros: Reserva, adaptadores: Reserva]
+  static mappedBy = [proyectores: "proyector", retros: "retro", pcs: "pc",
+                    sonidos: "sonido", punteros: "puntero", adaptadores: "adaptador"]
 
     static constraints = {
       nombre      (nullable:true, unique:true)

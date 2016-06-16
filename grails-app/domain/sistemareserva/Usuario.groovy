@@ -10,7 +10,8 @@ class Usuario {
   Date    fechaUltMod
 
   static  belongsTo = [tipoUsuario: TipoUsuario, creador: SUser]
-  static  hasMany = [reservas: Reserva]
+  static  hasMany = [docentes: Reserva, adminCreadores: Reserva]
+  static mappedBy = [docentes: "docente", adminCreadores: "adminCreador"]
 
     static constraints = {
       dni           (nullable:true, unique:true)
