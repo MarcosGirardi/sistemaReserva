@@ -28,6 +28,16 @@ class Reserva {
 
     static constraints = {
       fecha         (nullable:true)
+      proyector     (nullable:true)
+      retro         (nullable:true)
+      pc            (nullable:true)
+      sonido        (nullable:true)
+      puntero       (nullable:true)
+      adaptador     (nullable:true)
+      horaEntrega   (nullable:true)
+      horaRetiro    (nullable:true)
+      docente       (nullable:true)
+      adminCreador  (nullable:true)
       semestral     (nullable:true)
       horaEntregado (nullable:true)
       horaRetirado  (nullable:true)

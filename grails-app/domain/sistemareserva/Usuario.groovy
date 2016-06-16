@@ -11,7 +11,7 @@ class Usuario {
 
   static  belongsTo = [tipoUsuario: TipoUsuario, creador: SUser]
   static  hasMany = [docentes: Reserva, adminCreadores: Reserva]
-  static mappedBy = [docentes: "docente", adminCreadores: "adminCreador"]
+  static  mappedBy = [docentes: "docente", adminCreadores: "adminCreador"]
 
     static constraints = {
       dni           (nullable:true, unique:true)

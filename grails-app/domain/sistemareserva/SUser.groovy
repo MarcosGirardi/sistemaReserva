@@ -8,7 +8,8 @@ class SUser {
   static  hasMany = [tipos: TipoUsuario, usuarios: Usuario]
 
     static constraints = {
-      nombre    (nullable:true)
-      password  (nullable:true)
+      nombre      (nullable:true, unique:true)
+      password    (nullable:true)
+      tipoUsuario (nullable:true)
     }
 }
