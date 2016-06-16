@@ -1,6 +1,7 @@
 package sistemareserva
 
 import grails.transaction.Transactional
+import java.security.MessageDigest
 
 @Transactional
 class EncodingService {
