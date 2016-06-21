@@ -4,6 +4,7 @@ class Usuario {
   Integer dni
   String  nombre
   String  apellido
+  String  mail
   String  password
   Boolean habilitado
   Date    fechaCreacion
@@ -17,6 +18,7 @@ class Usuario {
       dni           (nullable:true, unique:true)
       nombre        (nullable:true)
       apellido      (nullable:true)
+      mail          (nullable:true, email:true)
       password      (nullable:true)
       habilitado    (nullable:true)
       fechaCreacion (nullable:true)
